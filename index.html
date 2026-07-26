@@ -2,21 +2,50 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Love</title>
+<title>Love ❤️</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:20px;
+}
+img{
+    width:300px;
+    margin:15px;
+    border-radius:15px;
+}
+audio{
+    margin:20px;
+}
+</style>
+
 </head>
 
-<body style="text-align:center; background:black; color:white;">
+<body>
 
 <h1>❤️ بحبك ❤️</h1>
 
-<img src="IMG_7313.jpeg" width="300" alt="Love">
+<div id="gallery"></div>
 
-<br><br>
-
-<audio controls autoplay>
+<audio controls autoplay loop>
     <source src="AUDIO-2026-07-26-10-56-36.mp3" type="audio/mpeg">
     متصفحك لا يدعم تشغيل الصوت.
 </audio>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+for (let i = 7313; i <= 7337; i++) {
+    const img = document.createElement("img");
+    img.src = "IMG_" + i + ".jpeg";
+    img.alt = "Love";
+    gallery.appendChild(img);
+}
+</script>
 
 </body>
 </html>
