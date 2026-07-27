@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,6 +81,72 @@
         document.getElementById('errorMsg').style.display = 'block';
       }
     }
+    function startTyping() {
+      let index = 0;
+      const speed = 60;
+      const typedElement = document.getElementById('typed-text');
+      function typeChar() {
+        if (index < messageText.length) {
+          typedElement.innerHTML += messageText.charAt(index);
+          index++;
+          setTimeout(typeChar, speed);
+        } else {
+          document.getElementById('cursor').style.display = 'none';
+        }
+      }
+      typeChar();
+    }
+  </script>
+</body><div class="single-photo-card"><img src="IMG_7313.jpeg" alt="1"></div>
+      <div class="single-photo-card"><img src="IMG_7314.jpeg" alt="2"></div>
+      <div class="single-photo-card"><img src="IMG_7315.jpeg" alt="3"></div>
+      <div class="single-photo-card"><img src="IMG_7316.jpeg" alt="4"></div>
+      <div class="single-photo-card"><img src="IMG_7317.jpeg" alt="5"></div>
+      <div class="single-photo-card"><img src="IMG_7318.jpeg" alt="6"></div>
+      <div class="single-photo-card"><img src="IMG_7319.jpeg" alt="7"></div>
+      <div class="single-photo-card"><img src="IMG_7320.jpeg" alt="8"></div>
+      <div class="single-photo-card"><img src="IMG_7321.jpeg" alt="9"></div>
+      <div class="single-photo-card"><img src="IMG_7322.jpeg" alt="10"></div>
+      <div class="single-photo-card"><img src="IMG_7323.jpeg" alt="11"></div>
+      <div class="single-photo-card"><img src="IMG_7324.jpeg" alt="12"></div>
+      <div class="single-photo-card"><img src="IMG_7325.jpeg" alt="13"></div>
+      <div class="single-photo-card"><img src="IMG_7326.jpeg" alt="14"></div>
+      <div class="single-photo-card"><img src="IMG_7327.jpeg" alt="15"></div>
+      <div class="single-photo-card"><img src="IMG_7328.jpeg" alt="16"></div>
+    </div>
+  </div>
+
+  <script>
+    const messageText = "فاكره لما قولتلك هنعمل ذكريات وبالفعل عملنا ذكرايات كتير اوي يا حبيبي ولسه هنعمل اكتر واكتر لما تبقي معايا وحبيبتي وديه صور بسيطه عن كل خروجه بتمثل عددهم بس لاكن مش الحب والفرح والعشره الي بينا بس عايزك تعرفي اني بحبك اوي اوي وعمري مستغنى عنك ولا اسيبك في يوم يا حبيبتي جوزك محمد ♥️🌚";
+
+    function goToPassword() {
+      // تجهيز ملف الصوت للتشغيل عند أول ضغطة
+      const audio = document.getElementById('bg-audio');
+      audio.load();
+      document.getElementById('welcome-screen').classList.remove('active');
+      document.getElementById('password-screen').classList.add('active');
+    }
+
+    function checkPassword() {
+      const input = document.getElementById('passInput').value;
+      if (input === "Love" || input === "love") {
+        document.getElementById('password-screen').classList.remove('active');
+        document.getElementById('content-screen').classList.add('active');
+        
+        // تشغيل الأغنية مباشرة بمجرد الضغط على زرار افتح
+        const audio = document.getElementById('bg-audio');
+        audio.play().then(() => {
+          console.log("Audio started successfully");
+        }).catch(err => {
+          console.log("Audio play failed: ", err);
+        });
+
+        startTyping();
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+      }
+    }
+
     function startTyping() {
       let index = 0;
       const speed = 60;
