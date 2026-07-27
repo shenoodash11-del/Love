@@ -1,4 +1,4 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -173,96 +173,6 @@ DOCTYPE html>
       <h3>💌 رسالتي لكِ:</h3>
       <span id="typed-text"></span><span class="cursor" id="cursor"></span>
     </div>
-    <div class="photos-container"><div class="single-photo-card"><img src="IMG_7313.jpeg" alt="1"></div>
-      <div class="single-photo-card"><img src="IMG_7314.jpeg" alt="2"></div>
-      <div class="single-photo-card"><img src="IMG_7315.jpeg" alt="3"></div>
-      <div class="single-photo-card"><img src="IMG_7316.jpeg" alt="4"></div>
-      <div class="single-photo-card"><img src="IMG_7317.jpeg" alt="5"></div>
-      <div class="single-photo-card"><img src="IMG_7318.jpeg" alt="6"></div>
-      <div class="single-photo-card"><img src="IMG_7319.jpeg" alt="7"></div>
-      <div class="single-photo-card"><img src="IMG_7320.jpeg" alt="8"></div>
-      <div class="single-photo-card"><img src="IMG_7321.jpeg" alt="9"></div>
-      <div class="single-photo-card"><img src="IMG_7322.jpeg" alt="10"></div>
-      <div class="single-photo-card"><img src="IMG_7323.jpeg" alt="11"></div>
-      <div class="single-photo-card"><img src="IMG_7324.jpeg" alt="12"></div>
-      <div class="single-photo-card"><img src="IMG_7325.jpeg" alt="13"></div>
-      <div class="single-photo-card"><img src="IMG_7326.jpeg" alt="14"></div>
-      <div class="single-photo-card"><img src="IMG_7327.jpeg" alt="15"></div>
-      <div class="single-photo-card"><img src="IMG_7328.jpeg" alt="16"></div>
-    </div>
-  </div>
-<script>
-    const messageText = "فاكره لما قولتلك هنعمل ذكريات وبالفعل عملنا ذكرايات كتير اوي يا حبيبي ولسه هنعمل اكتر واكتر لما تبقي معايا وحبيبتي وديه صور بسيطه عن كل خروجه بتمثل عددهم بس لاكن مش الحب والفرح والعشره الي بينا بس عايزك تعرفي اني بحبك اوي اوي وعمري مستغنى عنك ولا اسيبك في يوم يا حبيبتي جوزك محمد ♥️🌚";
-    const audio = document.getElementById('bg-audio');
-
-    function goToPassword() {
-      audio.play().then(() => { audio.pause(); }).catch(() => {});
-      document.getElementById('welcome-screen').classList.remove('active');
-      document.getElementById('password-screen').classList.add('active');
-    }
-
-    function checkPassword() {
-      const input = document.getElementById('passInput').value;
-      if (input === "Love" || input === "love") {
-        document.getElementById('password-screen').classList.remove('active');
-        document.getElementById('content-screen').classList.add('active');
-        document.getElementById('audio-toggle').style.display = 'block';
-        audio.currentTime = 0;
-        audio.play().catch(e => console.log("Audio play blocked", e));
-        startTyping();
-      } else {
-        document.getElementById('errorMsg').style.display = 'block';
-      }
-    }
-
-    function toggleAudio() {
-      if (audio.paused) { audio.play(); } else { audio.pause(); }
-    }
-
-    function startTyping() {
-      let index = 0;
-      const speed = 60;
-      const typedElement = document.getElementById('typed-text');
-      function typeChar() {
-        if (index < messageText.length) {
-          typedElement.innerHTML += messageText.charAt(index);
-          index++;
-          setTimeout(typeChar, speed);
-        } else {
-          document.getElementById('cursor').style.display = 'none';
-        }
-      }
-      typeChar();
-    }
-  </script>
-</body>
-</html>
-<audio id="bg-audio" loop preload="auto">
-    <source src="AUDIO-2026-07-26-10-56-36.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="audio-toggle" class="audio-btn" onclick="toggleAudio()">🎵 تشغيل / إيقاف الأغنية</button>
-
-  <div id="welcome-screen" class="screen active">
-    <div class="flower-icon">🌹🌸🌹</div>
-    <h2>أهلاً بكِ في عالمنا الخاص</h2>
-    <p>مكان مخصص لأجمل ذكرياتنا سوا</p>
-    <button onclick="goToPassword()">دخول 💖</button>
-  </div>
-
-  <div id="password-screen" class="screen">
-    <div class="flower-icon">🔐</div>
-    <h3>أدخل كلمة السر</h3>
-    <input type="password" id="passInput" placeholder="Enter Password">
-    <button onclick="checkPassword()">افتح</button>
-    <p id="errorMsg" class="error">كلمة السر غير صحيحة!</p>
-  </div>
-
-  <div id="content-screen" class="screen">
-    <div class="message-box">
-      <h3>💌 رسالتي لكِ:</h3>
-      <span id="typed-text"></span><span class="cursor" id="cursor"></span>
-    </div>
     <div class="photos-container">
       <div class="single-photo-card"><img src="IMG_7313.jpeg" alt="1"></div>
       <div class="single-photo-card"><img src="IMG_7314.jpeg" alt="2"></div>
@@ -288,7 +198,6 @@ DOCTYPE html>
     const audio = document.getElementById('bg-audio');
 
     function goToPassword() {
-      // تجهيز الصوت للعمل مجرد الضغط على زر دخول لتفادي حظر الآيفون
       audio.play().then(() => {
         audio.pause();
       }).catch(e => console.log("Audio prep:", e));
@@ -337,4 +246,3 @@ DOCTYPE html>
   </script>
 </body>
 </html>
-  
